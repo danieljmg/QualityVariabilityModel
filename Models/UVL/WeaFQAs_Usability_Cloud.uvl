@@ -1,0 +1,281 @@
+features
+	FQAs 
+		or
+			Security 
+				or
+					Encryption 
+						mandatory
+							EncryptionAlgorithms 
+								alternative
+									Asymmetric 
+										alternative
+											RSA {Usability 6, Cloud true}
+											DSA {Usability 10, Cloud false}
+											ECDSA {Usability 1, Cloud true}
+									Symmetric 
+										alternative
+											AES {Usability 1, Cloud true}
+											DESede {Usability 10, Cloud true}
+											Blowfish {Usability 9, Cloud false}
+											DES {Usability 9, Cloud false}
+						optional
+							KeySize {Usability 2, Cloud true}
+						mandatory
+							EncryptionImplementations 
+								alternative
+									JavaxCrypto {Usability 7, Cloud false}
+									BouncyCastle {Usability 10, Cloud true}
+						mandatory
+							EncryptionOperations 
+								alternative
+									Encrypt {Usability 4, Cloud false}
+									Decrypt {Usability 10, Cloud false}
+						mandatory
+							Mode 
+								alternative
+									CBC {Usability 3, Cloud false}
+									ECB {Usability 6, Cloud true}
+									CFB {Usability 9, Cloud false}
+									CTR {Usability 3, Cloud true}
+									CTS {Usability 2, Cloud false}
+						mandatory
+							Padding 
+								alternative
+									PKCS5 {Usability 4, Cloud false}
+									PKCS1 {Usability 6, Cloud true}
+									OAEP {Usability 1, Cloud false}
+					Authentication 
+						mandatory
+							AuthenticationImplementations 
+								alternative
+									JAAS {Usability 2, Cloud false}
+									SpringSecurity {Usability 2, Cloud true}
+						mandatory
+							AuthenticationOperations 
+								mandatory
+									Authenticate {Usability 2, Cloud true}
+						mandatory
+							AuthenticationMechanism 
+								alternative
+									UserPassword {Usability 10, Cloud false}
+									DigitalCertificate 
+										optional
+											PseudonymousCertificate {Usability 7, Cloud false}
+									Biometric {Usability 2, Cloud false}
+									SocialID {Usability 8, Cloud true}
+									Pin {Usability 3, Cloud true}
+									MatrixCode {Usability 2, Cloud false}
+						optional
+							PasswordLength {Usability 8, Cloud true}
+						optional
+							PasswordType 
+								alternative
+									Numeric {Usability 9, Cloud false}
+									Alphanumeric {Usability 6, Cloud false}
+									SpecialChars {Usability 3, Cloud false}
+						optional
+							LimitedSession {Usability 5, Cloud true}
+						optional
+							AuthenticationLogging {Usability 10, Cloud true}
+						optional
+							AnonymousUser {Usability 9, Cloud true}
+					Hashing 
+						mandatory
+							HashingImplementations 
+								alternative
+									JavaSecurityMessageDigest {Usability 9, Cloud true}
+									Guava {Usability 5, Cloud false}
+						mandatory
+							HashingOperations 
+								mandatory
+									Hash {Usability 3, Cloud false}
+						mandatory
+							HashingAlgorithms 
+								alternative
+									MD5 {Usability 2, Cloud true}
+									SHA1 {Usability 3, Cloud false}
+									SHA256 {Usability 6, Cloud true}
+									SHA512 {Usability 7, Cloud true}
+					Confidentiality {Usability 9, Cloud true}
+					Privacy {Usability 9, Cloud false}
+					Integrity {Usability 6, Cloud true}
+					Non_Repudiation {Usability 1, Cloud true}
+			Usability 
+				or
+					Logging 
+						mandatory
+							LoggingOperations 
+								mandatory
+									Log {Usability 5, Cloud true}
+						mandatory
+							LoggingImplementations 
+								alternative
+									Log4J {Usability 4, Cloud true}
+									LogBack {Usability 2, Cloud true}
+									JavaUtilLogging {Usability 6, Cloud false}
+									SimpleImplementationSLF4J {Usability 10, Cloud false}
+						mandatory
+							Handler 
+								alternative
+									ConsoleLog {Usability 2, Cloud true}
+									FileLog {Usability 7, Cloud true}
+									DatabaseLog {Usability 10, Cloud false}
+						mandatory
+							Format 
+								alternative
+									TXT {Usability 7, Cloud true}
+									XML {Usability 3, Cloud true}
+									HTML {Usability 1, Cloud true}
+									JSON {Usability 3, Cloud false}
+						mandatory
+							Level 
+								or
+									Trace {Usability 1, Cloud false}
+									Debug {Usability 1, Cloud true}
+									Info {Usability 9, Cloud false}
+									Warning {Usability 4, Cloud true}
+									Error {Usability 2, Cloud true}
+						optional
+							CypheredMessages {Usability 5, Cloud false}
+						optional
+							HistoryLog {Usability 5, Cloud true}
+						optional
+							ErrorLog 
+								optional
+									TraceFile {Usability 6, Cloud false}
+					ContextualHelp 
+						mandatory
+							ContextualHelpOperations 
+								mandatory
+									ShowHelp {Usability 1, Cloud true}
+						mandatory
+							ContextualHelpImplementations 
+								mandatory
+									JavaWizardAPI {Usability 10, Cloud true}
+						mandatory
+							HelpType 
+								or
+									Tutorial {Usability 9, Cloud true}
+									Wizard {Usability 7, Cloud true}
+						mandatory
+							UserType 
+								or
+									Beginner {Usability 2, Cloud true}
+									Intermediate {Usability 7, Cloud false}
+									Advanced {Usability 9, Cloud true}
+									Expert {Usability 3, Cloud false}
+						optional
+							AuthenticatedUser {Usability 9, Cloud false}
+					ExecutionControl 
+						mandatory
+							ExecutionControl_1 
+								or
+									Undo {Usability 4, Cloud true}
+									Redo {Usability 7, Cloud true}
+									Cancel {Usability 9, Cloud false}
+									GoBack {Usability 6, Cloud false}
+						optional
+							Shortcuts {Usability 10, Cloud false}
+					Internationalization 
+						mandatory
+							Locale {Usability 5, Cloud false}
+					Feedback 
+						or
+							InteractionFeedback {Usability 10, Cloud false}
+							ProgressFeedback {Usability 4, Cloud false}
+							SystemStatusDisplay {Usability 8, Cloud false}
+							Alerts {Usability 9, Cloud false}
+			Persistence 
+				or
+					FileStorage 
+						mandatory
+							FileStorageOperations 
+								alternative
+									CreateFile {Usability 10, Cloud false}
+									ModifyFile {Usability 7, Cloud false}
+									DeleteFile {Usability 3, Cloud true}
+						mandatory
+							FileType 
+								alternative
+									Binary {Usability 6, Cloud true}
+									TXTFile {Usability 8, Cloud false}
+									XMLFile {Usability 5, Cloud true}
+									JSONFile {Usability 6, Cloud true}
+						mandatory
+							FileStorageImplementations 
+								mandatory
+									JavaIO {Usability 7, Cloud true}
+						optional
+							TemporalFile {Usability 2, Cloud false}
+					DatabaseStorage 
+						mandatory
+							DatabaseStorageOperations 
+								alternative
+									Store {Usability 3, Cloud false}
+									Query {Usability 8, Cloud true}
+						mandatory
+							DatabaseStorageImplementations 
+								alternative
+									MySQL {Usability 2, Cloud false}
+									MongoDB {Usability 2, Cloud true}
+									OracleDB {Usability 1, Cloud true}
+						mandatory
+							DatabaseType 
+								alternative
+									Relational {Usability 4, Cloud true}
+									NoSQL {Usability 3, Cloud false}
+						mandatory
+							DataType 
+								or
+									Integers {Usability 9, Cloud true}
+									Strings {Usability 4, Cloud true}
+									Floats {Usability 5, Cloud true}
+									Objects {Usability 6, Cloud true}
+						optional
+							SecureDatabase {Usability 1, Cloud true}
+			ContextAwareness 
+				or
+					LocationAware 
+						or
+							GPS {Usability 2, Cloud true}
+							WiFiLocation {Usability 3, Cloud false}
+					TimeAware {Usability 10, Cloud false}
+					DeviceAware 
+						or
+							BatteryStatus {Usability 3, Cloud false}
+							IRSensor {Usability 1, Cloud true}
+					UserAware {Usability 3, Cloud false}
+					EnvironmentAware {Usability 10, Cloud true}
+			Performance 
+				mandatory
+					Caching 
+						mandatory
+							CachingOperations 
+								alternative
+									CacheStore {Usability 1, Cloud false}
+									CacheQuery {Usability 2, Cloud false}
+									CacheUpdate {Usability 3, Cloud false}
+						mandatory
+							CachingImplementations 
+								alternative
+									JavaCachingSystem {Usability 6, Cloud false}
+									Caffeine {Usability 7, Cloud true}
+						mandatory
+							MaxSizeCache {Usability 7, Cloud false}
+						mandatory
+							CacheType 
+								alternative
+									LocalCache {Usability 1, Cloud false}
+									RemoteCache {Usability 10, Cloud true}
+						optional
+							MaxLifeSeconds {Usability 6, Cloud true}
+						optional
+							EternalObjects {Usability 7, Cloud true}
+constraints
+	TimeAware | ! BatteryStatus
+	Alerts | ! BatteryStatus
+	FileStorage | ! TraceFile
+	! SimpleImplementationSLF4J | ! XML
+	! AuthenticatedUser | Authentication
+	! ErrorLog | Error
+	! HistoryLog | Trace

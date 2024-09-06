@@ -1,0 +1,446 @@
+abstract Feature
+	Usability -> integer
+        	[ this >= 0 ]
+	Cloud-> integer
+		[ this >= 0 ]
+	
+abstract or FQAs
+	or Security
+		Encryption
+			xor EncryptionAlgorithms
+				xor Asymmetric
+					RSA : Feature
+						[Usability = 6]
+						[Cloud = 1]
+					DSA : Feature
+						[Usability = 10]
+						[Cloud = 0]
+					ECDSA : Feature
+						[Usability = 1]
+						[Cloud = 1]
+				xor Symmetric
+					AES : Feature
+						[Usability = 1]
+						[Cloud = 1]
+					DESede : Feature
+						[Usability = 10]
+						[Cloud = 1]
+					Blowfish : Feature
+						[Usability = 9]
+						[Cloud = 0]
+					DES : Feature
+						[Usability = 9]
+						[Cloud = 0]
+			KeySize : Feature ?
+				[Usability = 2]
+				[Cloud = 1]
+			xor EncryptionImplementations
+				JavaxCrypto : Feature
+					[Usability = 7]
+					[Cloud = 0]
+				BouncyCastle : Feature
+					[Usability = 10]
+					[Cloud = 1]
+			xor EncryptionOperations
+				Encrypt : Feature
+					[Usability = 4]
+					[Cloud = 0]
+				Decrypt : Feature
+					[Usability = 10]
+					[Cloud = 0]
+			xor Mode
+				CBC : Feature
+					[Usability = 3]
+					[Cloud = 0]
+				ECB : Feature
+					[Usability = 6]
+					[Cloud = 1]
+				CFB : Feature
+					[Usability = 9]
+					[Cloud = 0]
+				CTR : Feature
+					[Usability = 3]
+					[Cloud = 1]
+				CTS : Feature
+					[Usability = 2]
+					[Cloud = 0]
+			xor Padding
+				PKCS5 : Feature
+					[Usability = 4]
+					[Cloud = 0]
+				PKCS1 : Feature
+					[Usability = 6]
+					[Cloud = 1]
+				OAEP : Feature
+					[Usability = 1]
+					[Cloud = 0]
+		Authentication
+			xor AuthenticationImplementations
+				JAAS : Feature
+					[Usability = 2]
+					[Cloud = 0]
+				SpringSecurity : Feature
+					[Usability = 2]
+					[Cloud = 1]
+			AuthenticationOperations
+				Authenticate : Feature
+					[Usability = 2]
+					[Cloud = 1]
+			xor AuthenticationMechanism
+				UserPassword : Feature
+					[Usability = 10]
+					[Cloud = 0]
+				DigitalCertificate
+					PseudonymousCertificate : Feature ?
+						[Usability = 7]
+						[Cloud = 0]
+				Biometric : Feature
+					[Usability = 2]
+					[Cloud = 0]
+				SocialID : Feature
+					[Usability = 8]
+					[Cloud = 1]
+				Pin : Feature
+					[Usability = 3]
+					[Cloud = 1]
+				MatrixCode : Feature
+					[Usability = 2]
+					[Cloud = 0]
+			PasswordLength : Feature ?
+				[Usability = 8]
+				[Cloud = 1]
+			xor PasswordType ?
+				Numeric : Feature
+					[Usability = 9]
+					[Cloud = 0]
+				Alphanumeric : Feature
+					[Usability = 6]
+					[Cloud = 0]
+				SpecialChars : Feature
+					[Usability = 3]
+					[Cloud = 0]
+			LimitedSession : Feature ?
+				[Usability = 5]
+				[Cloud = 1]
+			AuthenticationLogging : Feature ?
+				[Usability = 10]
+				[Cloud = 1]
+			AnonymousUser : Feature ?
+				[Usability = 9]
+				[Cloud = 1]
+		Hashing
+			xor HashingImplementations
+				JavaSecurityMessageDigest : Feature
+					[Usability = 9]
+					[Cloud = 1]
+				Guava : Feature
+					[Usability = 5]
+					[Cloud = 0]
+			HashingOperations
+				Hash : Feature
+					[Usability = 3]
+					[Cloud = 0]
+			xor HashingAlgorithms
+				MD5 : Feature
+					[Usability = 2]
+					[Cloud = 1]
+				SHA1 : Feature
+					[Usability = 3]
+					[Cloud = 0]
+				SHA256 : Feature
+					[Usability = 6]
+					[Cloud = 1]
+				SHA512 : Feature
+					[Usability = 7]
+					[Cloud = 1]
+		Confidentiality : Feature
+			[Usability = 9]
+			[Cloud = 1]
+		Privacy : Feature
+			[Usability = 9]
+			[Cloud = 0]
+		Integrity : Feature
+			[Usability = 6]
+			[Cloud = 1]
+		Non_Repudiation : Feature
+			[Usability = 1]
+			[Cloud = 1]
+	or Usability
+		Logging
+			LoggingOperations
+				Log : Feature
+					[Usability = 5]
+					[Cloud = 1]
+			xor LoggingImplementations
+				Log4J : Feature
+					[Usability = 4]
+					[Cloud = 1]
+				LogBack : Feature
+					[Usability = 2]
+					[Cloud = 1]
+				JavaUtilLogging : Feature
+					[Usability = 6]
+					[Cloud = 0]
+				SimpleImplementationSLF4J : Feature
+					[Usability = 10]
+					[Cloud = 0]
+			xor Handler
+				ConsoleLog : Feature
+					[Usability = 2]
+					[Cloud = 1]
+				FileLog : Feature
+					[Usability = 7]
+					[Cloud = 1]
+				DatabaseLog : Feature
+					[Usability = 10]
+					[Cloud = 0]
+			xor Format
+				TXT : Feature
+					[Usability = 7]
+					[Cloud = 1]
+				XML : Feature
+					[Usability = 3]
+					[Cloud = 1]
+				HTML : Feature
+					[Usability = 1]
+					[Cloud = 1]
+				JSON : Feature
+					[Usability = 3]
+					[Cloud = 0]
+			or Level
+				Trace : Feature
+					[Usability = 1]
+					[Cloud = 0]
+				Debug : Feature
+					[Usability = 1]
+					[Cloud = 1]
+				Info : Feature
+					[Usability = 9]
+					[Cloud = 0]
+				Warning : Feature
+					[Usability = 4]
+					[Cloud = 1]
+				Error : Feature
+					[Usability = 2]
+					[Cloud = 1]
+			CypheredMessages : Feature ?
+				[Usability = 5]
+				[Cloud = 0]
+			HistoryLog : Feature ?
+				[Usability = 5]
+				[Cloud = 1]
+			ErrorLog ?
+				TraceFile : Feature ?
+					[Usability = 6]
+					[Cloud = 0]
+		ContextualHelp
+			ContextualHelpOperations
+				ShowHelp : Feature
+					[Usability = 1]
+					[Cloud = 1]
+			ContextualHelpImplementations
+				JavaWizardAPI : Feature
+					[Usability = 10]
+					[Cloud = 1]
+			or HelpType
+				Tutorial : Feature
+					[Usability = 9]
+					[Cloud = 1]
+				Wizard : Feature
+					[Usability = 7]
+					[Cloud = 1]
+			or UserType
+				Beginner : Feature
+					[Usability = 2]
+					[Cloud = 1]
+				Intermediate : Feature
+					[Usability = 7]
+					[Cloud = 0]
+				Advanced : Feature
+					[Usability = 9]
+					[Cloud = 1]
+				Expert : Feature
+					[Usability = 3]
+					[Cloud = 0]
+			AuthenticatedUser : Feature ?
+				[Usability = 9]
+				[Cloud = 0]
+		ExecutionControl
+			or ExecutionControl_1
+				Undo : Feature
+					[Usability = 4]
+					[Cloud = 1]
+				Redo : Feature
+					[Usability = 7]
+					[Cloud = 1]
+				Cancel : Feature
+					[Usability = 9]
+					[Cloud = 0]
+				GoBack : Feature
+					[Usability = 6]
+					[Cloud = 0]
+			Shortcuts : Feature ?
+				[Usability = 10]
+				[Cloud = 0]
+		Internationalization
+			Locale : Feature
+				[Usability = 5]
+				[Cloud = 0]
+		or Feedback
+			InteractionFeedback : Feature
+				[Usability = 10]
+				[Cloud = 0]
+			ProgressFeedback : Feature
+				[Usability = 4]
+				[Cloud = 0]
+			SystemStatusDisplay : Feature
+				[Usability = 8]
+				[Cloud = 0]
+			Alerts : Feature
+				[Usability = 9]
+				[Cloud = 0]
+	or Persistence
+		FileStorage
+			xor FileStorageOperations
+				CreateFile : Feature
+					[Usability = 10]
+					[Cloud = 0]
+				ModifyFile : Feature
+					[Usability = 7]
+					[Cloud = 0]
+				DeleteFile : Feature
+					[Usability = 3]
+					[Cloud = 1]
+			xor FileType
+				Binary : Feature
+					[Usability = 6]
+					[Cloud = 1]
+				TXTFile : Feature
+					[Usability = 8]
+					[Cloud = 0]
+				XMLFile : Feature
+					[Usability = 5]
+					[Cloud = 1]
+				JSONFile : Feature
+					[Usability = 6]
+					[Cloud = 1]
+			FileStorageImplementations
+				JavaIO : Feature
+					[Usability = 7]
+					[Cloud = 1]
+			TemporalFile : Feature ?
+				[Usability = 2]
+				[Cloud = 0]
+		DatabaseStorage
+			xor DatabaseStorageOperations
+				Store : Feature
+					[Usability = 3]
+					[Cloud = 0]
+				Query : Feature
+					[Usability = 8]
+					[Cloud = 1]
+			xor DatabaseStorageImplementations
+				MySQL : Feature
+					[Usability = 2]
+					[Cloud = 0]
+				MongoDB : Feature
+					[Usability = 2]
+					[Cloud = 1]
+				OracleDB : Feature
+					[Usability = 1]
+					[Cloud = 1]
+			xor DatabaseType
+				Relational : Feature
+					[Usability = 4]
+					[Cloud = 1]
+				NoSQL : Feature
+					[Usability = 3]
+					[Cloud = 0]
+			or DataType
+				Integers : Feature
+					[Usability = 9]
+					[Cloud = 1]
+				Strings : Feature
+					[Usability = 4]
+					[Cloud = 1]
+				Floats : Feature
+					[Usability = 5]
+					[Cloud = 1]
+				Objects : Feature
+					[Usability = 6]
+					[Cloud = 1]
+			SecureDatabase : Feature ?
+				[Usability = 1]
+				[Cloud = 1]
+	or ContextAwareness
+		or LocationAware
+			GPS : Feature
+				[Usability = 2]
+				[Cloud = 1]
+			WiFiLocation : Feature
+				[Usability = 3]
+				[Cloud = 0]
+		TimeAware : Feature
+			[Usability = 10]
+			[Cloud = 0]
+		or DeviceAware
+			BatteryStatus : Feature
+				[Usability = 3]
+				[Cloud = 0]
+			IRSensor : Feature
+				[Usability = 1]
+				[Cloud = 1]
+		UserAware : Feature
+			[Usability = 3]
+			[Cloud = 0]
+		EnvironmentAware : Feature
+			[Usability = 10]
+			[Cloud = 1]
+	Performance
+		Caching
+			xor CachingOperations
+				CacheStore : Feature
+					[Usability = 1]
+					[Cloud = 0]
+				CacheQuery : Feature
+					[Usability = 2]
+					[Cloud = 0]
+				CacheUpdate : Feature
+					[Usability = 3]
+					[Cloud = 0]
+			xor CachingImplementations
+				JavaCachingSystem : Feature
+					[Usability = 6]
+					[Cloud = 0]
+				Caffeine : Feature
+					[Usability = 7]
+					[Cloud = 1]
+			MaxSizeCache : Feature
+				[Usability = 7]
+				[Cloud = 0]
+			xor CacheType
+				LocalCache : Feature
+					[Usability = 1]
+					[Cloud = 0]
+				RemoteCache : Feature
+					[Usability = 10]
+					[Cloud = 1]
+			MaxLifeSeconds : Feature ?
+				[Usability = 6]
+				[Cloud = 1]
+			EternalObjects : Feature ?
+				[Usability = 7]
+				[Cloud = 1]
+
+	total_usability -> integer = min Feature.Usability
+	total_cloud -> integer = min Feature.Cloud
+	
+[TimeAware || not BatteryStatus]
+[Alerts || not BatteryStatus]
+[FileStorage || not TraceFile]
+[not SimpleImplementationSLF4J || not XML]
+[not AuthenticatedUser || Authentication]
+[not ErrorLog || Error]
+[not HistoryLog || Trace]
+
+CP : FQAs

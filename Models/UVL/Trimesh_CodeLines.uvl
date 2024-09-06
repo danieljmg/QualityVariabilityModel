@@ -1,0 +1,73 @@
+features
+	v0 {CodeLines 43304}
+		mandatory
+			Cycle {CodeLines 23257}
+		mandatory
+			Smoother {CodeLines 95735}
+		optional
+			v1 {CodeLines 32605}
+		optional
+			v2 {CodeLines 46383}
+		optional
+			v3 {CodeLines 75505}
+		optional
+			v4 {CodeLines 18134}
+		optional
+			v5 {CodeLines 41459}
+		optional
+			v6 {CodeLines 66059}
+		optional
+			v7 {CodeLines 77633}
+		optional
+			v8 {CodeLines 12256}
+		optional
+			v9 {CodeLines 20700}
+		optional
+			v10 {CodeLines 4876}
+		optional
+			v11 {CodeLines 29206}
+		optional
+			v12 {CodeLines 77008}
+		optional
+			v13 {CodeLines 5530}
+		optional
+			v14 {CodeLines 94971}
+		optional
+			v15 {CodeLines 98923}
+		optional
+			v16 {CodeLines 91521}
+		optional
+			v17 {CodeLines 21257}
+		optional
+			v18 {CodeLines 25399}
+		optional
+			v19 {CodeLines 64063}
+		optional
+			v20 {CodeLines 97794}
+		optional
+			v21 {CodeLines 46497}
+		optional
+			v22 {CodeLines 76408}
+		optional
+			V {CodeLines 34159}
+		optional
+			F {CodeLines 65121}
+		optional
+			Jacobi {CodeLines 15141}
+		optional
+			ColorGS {CodeLines 94527}
+		optional
+			Line {CodeLines 21776}
+		optional
+			ZebraLine {CodeLines 90674}
+constraints
+	! v5
+	! v10
+	! v16
+	! v22
+	Cycle | ! V
+	Cycle | ! F
+	Smoother | ! Jacobi
+	Smoother | ! ColorGS
+	Smoother | ! Line
+	Smoother | ! ZebraLine

@@ -1,0 +1,66 @@
+abstract Feature
+	Cost -> integer
+        	[ this >= 0 ]
+	Security-> integer
+
+abstract EDGE
+	xor Interface
+		xor Mobile
+			G3 : Feature
+				[Cost = 6]
+				[Security = 2]
+			G4 : Feature
+				[Cost = 14]
+				[Security = 2]
+			G5 : Feature
+				[Cost = 22]
+				[Security = 2]
+			G6 : Feature
+				[Cost = 15]
+				[Security = 2]
+		xor WiFi
+			GHz24 : Feature
+				[Cost = 14]
+				[Security = 3]
+			GHz5 : Feature
+				[Cost = 25]
+				[Security = 1]
+		xor EthernetMbps
+			EthernetMbps1 : Feature
+				[Cost = 23]
+				[Security = 2]
+			EthernetMbps10 : Feature
+				[Cost = 12]
+				[Security = 3]
+			EthernetMbps100 : Feature
+				[Cost = 17]
+				[Security = 1]
+	xor VNFs
+		Monitor : Feature
+			[Cost = 7]
+			[Security = 2]
+		Firewall : Feature
+			[Cost = 5]
+			[Security = 1]
+		Encryption : Feature
+			[Cost = 6]
+			[Security = 1]
+	xor Antenna ?
+		Small : Feature
+			[Cost = 15]
+			[Security = 2]
+		Medium : Feature
+			[Cost = 24]
+			[Security = 3]
+		Large : Feature
+			[Cost = 13]
+			[Security = 1]
+	total_cost -> integer = sum Feature.Cost
+	total_security -> integer = min Feature.Security
+	
+CP : EDGE
+[(Mobile || WiFi) => Antenna]
+[EthernetMbps => not Antenna]
+
+//<< min CP.total_cost >>
+//<< min CP.total_security >>

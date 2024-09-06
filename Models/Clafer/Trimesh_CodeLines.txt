@@ -1,0 +1,88 @@
+abstract Feature
+	CodeLines -> integer
+        	[ this >= 0 ]
+			
+abstract MobileMedia2
+	or MediaSelection
+		Photo : Feature 
+			[CodeLines = 4]
+		Music
+			MusicPlayer : Feature 
+				[CodeLines = 4]
+		Video : Feature 
+			[CodeLines = 2]
+	MediaManagement
+		Favourites ?
+			SetFavourites : Feature 
+				[CodeLines = 5]
+			ViewFavourites : Feature 
+				[CodeLines = 7]
+		CopyMedia : Feature ?
+			[CodeLines = 2]
+		SMSTransfer ?
+			ReceivePhoto : Feature ?
+				[CodeLines = 7]
+			SendPhoto : Feature ?
+				[CodeLines = 7]
+	xor ScreenSize
+		Screen1 : Feature 
+			[CodeLines = 2]
+		Screen2 : Feature 
+			[CodeLines = 1]
+		Screen3 : Feature 
+			[CodeLines = 1]
+	Speakerphone : Feature 
+		[CodeLines = 4]
+	Calendar : Feature 
+		[CodeLines = 3]
+	Radio : Feature 
+		[CodeLines = 6]
+	CallManager : Feature 
+		[CodeLines = 7]
+	TVDigital : Feature ?
+		[CodeLines = 7]
+	xor OS
+		Androide : Feature 
+			[CodeLines = 9]
+		WindowsMobile : Feature 
+			[CodeLines = 4]
+		Symbia : Feature 
+			[CodeLines = 2]
+		iOS : Feature 
+			[CodeLines = 8]
+	TouchScreen : Feature  ?
+		[CodeLines = 7]
+	or Connectivity ?
+		Bluetooth : Feature 
+			[CodeLines = 9]
+		or WiFi
+			Gmail : Feature 
+				[CodeLines = 5]
+			GoogleMaps : Feature 
+				[CodeLines = 6]
+			Youtube : Feature 
+				[CodeLines = 4]
+	GPS : Feature ?
+		[CodeLines = 1]
+	xor ResolutionCamera ?
+		Resolution3MP : Feature 
+			[CodeLines = 6]
+		Resolution8MP : Feature 
+			[CodeLines = 9]
+	or Language
+		Portuguese : Feature 
+			[CodeLines = 5]
+		English : Feature 
+			[CodeLines = 8]
+		Spanish : Feature 
+			[CodeLines = 6]
+			
+	total_codelines -> integer = sum Feature.CodeLines
+
+CP : MobileMedia2
+[Video || not ResolutionCamera]
+[Photo || not ResolutionCamera]
+[not CopyMedia || SMSTransfer]
+
+//<< min CP.total_codelines >>
+//<< min CP.total_sizecode >>

@@ -1,0 +1,35 @@
+features
+	EDGE {abstract}
+		mandatory
+			Interface 
+				alternative
+					Mobile 
+						alternative
+							G3 {Cost 7, Security 'L'}
+							G4 {Cost 16, Security 'M'}
+							G5 {Cost 23, Security 'L'}
+							G6 {Cost 12, Security 'M'}
+					WiFi 
+						alternative
+							GHz24 {Cost 6, Security 'L'}
+							GHz5 {Cost 19, Security 'L'}
+					EthernetMbps {abstract}
+						alternative
+							EthernetMbps1 {Cost 17, Security 'L'}
+							EthernetMbps10 {Cost 15, Security 'M'}
+							EthernetMbps100 {Cost 6, Security 'L'}
+		mandatory
+			VNFs 
+				alternative
+					Monitor {Cost 25, Security 'H'}
+					Firewall {Cost 24, Security 'L'}
+					Encryption {Cost 18, Security 'L'}
+		optional
+			Antenna 
+				alternative
+					Small {Cost 10, Security 'L'}
+					Medium {Cost 12, Security 'M'}
+					Large {Cost 21, Security 'L'}
+constraints
+	(Mobile | WiFi) => Antenna
+	EthernetMbps => ! Antenna

@@ -1,0 +1,82 @@
+abstract Feature
+	CodeLines -> integer
+        	[ this >= 0 ]
+
+abstract 1..* v0
+	Cycle : Feature ?
+		[CodeLines = 5]
+	Smoother : Feature ?
+		[CodeLines = 6]
+	v1 : Feature ?
+		[CodeLines = 3]
+	v2 : Feature ?
+		[CodeLines = 1]
+	v3 : Feature ?
+		[CodeLines = 9]
+	v4 : Feature ?
+		[CodeLines = 7]
+	v5 : Feature ?
+		[CodeLines = 4]
+	v6 : Feature ?
+		[CodeLines = 8]
+	v7 : Feature ?
+		[CodeLines = 9]
+	v8 : Feature ?
+		[CodeLines = 8]
+	v9 : Feature ?
+		[CodeLines = 3]
+	v10 : Feature ?
+		[CodeLines = 5]
+	v11 : Feature ?
+		[CodeLines = 3]
+	v12 : Feature ?
+		[CodeLines = 2]
+	v13 : Feature ?
+		[CodeLines = 4]
+	v14 : Feature ?
+		[CodeLines = 3]
+	v15 : Feature ?
+		[CodeLines = 3]
+	v16 : Feature ?
+		[CodeLines = 1]
+	v17 : Feature ?
+		[CodeLines = 2]
+	v18 : Feature ?
+		[CodeLines = 7]
+	v19 : Feature ?
+		[CodeLines = 4]
+	v20 : Feature ?
+		[CodeLines = 3]
+	v21 : Feature ?
+		[CodeLines = 2]
+	v22 : Feature ?
+		[CodeLines = 7]
+	Vi : Feature ?
+		[CodeLines = 1]
+	Fi : Feature ?
+		[CodeLines = 8]
+	Jacobi : Feature ?
+		[CodeLines = 4]
+	ColorGS : Feature ?
+		[CodeLines = 2]
+	Line : Feature ?
+		[CodeLines = 5]
+	ZebraLine : Feature ?
+		[CodeLines = 4]
+ total_codelines -> integer = sum Feature.CodeLines
+ total_sizecode -> integer = sum Feature.CodeLines
+
+CP : v0
+[not v5]
+[not v10]
+[not v16]
+[not v22]
+[Cycle || not Vi]
+[Cycle || not Fi]
+[Smoother || not Jacobi]
+[Smoother || not ColorGS]
+[Smoother || not Line]
+[Smoother || not ZebraLine]
+
+//<< min CP.total_codelines >>
+//<< min CP.total_sizecode >>

@@ -1,0 +1,77 @@
+features
+	MobileMedia2 
+		mandatory
+			MediaSelection 
+				or
+					Photo {CodeLines 41680}
+					Music 
+						mandatory
+							MusicPlayer {CodeLines 43875}
+					Video {CodeLines 253}
+		mandatory
+			MediaManagement 
+				optional
+					Favourites 
+						mandatory
+							SetFavourites {CodeLines 5220}
+						mandatory
+							ViewFavourites {CodeLines 77550}
+				optional
+					CopyMedia {CodeLines 23686}
+				optional
+					SMSTransfer 
+						optional
+							ReceivePhoto {CodeLines 75455}
+						optional
+							SendPhoto {CodeLines 70368}
+		mandatory
+			ScreenSize 
+				alternative
+					Screen1 {CodeLines 29425}
+					Screen2 {CodeLines 19420}
+					Screen3 {CodeLines 15018}
+		mandatory
+			Speakerphone {CodeLines 44800}
+		mandatory
+			Calendar {CodeLines 36256}
+		mandatory
+			Radio {CodeLines 62885}
+		mandatory
+			CallManager {CodeLines 73707}
+		optional
+			TVDigital {CodeLines 76219}
+		mandatory
+			OS 
+				alternative
+					Androide {CodeLines 92710}
+					WindowsMobile {CodeLines 41127}
+					Symbia {CodeLines 29919}
+					iOS {CodeLines 84273}
+		optional
+			TouchScreen {CodeLines 76968}
+		optional
+			Connectivity 
+				or
+					Bluetooth {CodeLines 94740}
+					WiFi 
+						or
+							Gmail {CodeLines 54488}
+							GoogleMaps {CodeLines 62747}
+							Youtube {CodeLines 44820}
+		optional
+			GPS {CodeLines 13341}
+		optional
+			ResolutionCamera 
+				alternative
+					Resolution3MP {CodeLines 63194}
+					Resolution8MP {CodeLines 90201}
+		mandatory
+			Language 
+				or
+					Portuguese {CodeLines 58465}
+					English {CodeLines 86388}
+					Spanish {CodeLines 64521}
+constraints
+	Video | ! ResolutionCamera
+	Photo | ! ResolutionCamera
+	! CopyMedia | SMSTransfer
