@@ -1,0 +1,4 @@
+EDGE,Interface,Mobile,WiFi,EthernetMbps,G3,G4,G5,G6,GHz24,GHz5,EthernetMbps1,EthernetMbps10,EthernetMbps100,VNFs,Monitor,Firewall,Encryption,Antenna,Small,Medium,Large,Time,Energy
+True,True,False,False,True,False,False,False,False,False,False,True,False,False,True,True,False,False,False,False,False,False,988,736
+True,True,False,False,True,False,False,False,False,False,False,True,False,False,True,False,True,False,False,False,False,False,481,693
+True,True,False,False,True,False,False,False,False,False,False,True,False,False,True,False,False,True,False,False,False,False,738,237
