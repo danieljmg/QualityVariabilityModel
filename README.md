@@ -12,7 +12,7 @@ It is licensed under the [MIT license](https://github.com/danieljmg/QualityVaria
 This data-set contains:
 
 1. /Models: The 4 SPLs in different formats: .txt and .js for HADAS/Clafer, .uvl for UVLS/Z3 and .cql for QVM/CQL IDE.
-2. /QAsCSVs: The corresponding valued variant-wise Quality Attributes for: a) The complete solution space in 4 large CSVs, and b) the random sampled solution space in another 4 CSVs.
+2. /QAsCSVs: The corresponding valued variant-wise Quality Attributes for the: a) complete solution space in 4 large CSVs, and b) random sampled solution space in another 4 CSVs.
 3. A Microsoft Excel file with the scalability results, comparisson, and statistic analyses for non-linear regression approximation functions.
 
 
