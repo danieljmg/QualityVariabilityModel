@@ -29,7 +29,7 @@ The data-set has been generated using Java JDK 17.0.11.
 
 ## Authors
 
-1. **[Daniel-Jesus Munoz](https://github.com/danieljmg)**: [ITIS Software](https://www.uma.es/institutos-uma/info/118460/instituto-de-tecnologias-e-ingenieria-del-software/), [CAOSD](http://caosd.lcc.uma.es/), Dpt. LCC, Universidad de Málaga, Andalucía Tech, Spain
+1. **[Daniel-Jesus Munoz](https://github.com/danieljmg)**: [ITIS Software](https://itis.uma.es/), [CAOSD](http://caosd.lcc.uma.es/), Dpt. LCC, Universidad de Málaga, Andalucía Tech, Spain
 2. **Dilian Gurov**: [EECS](https://www.kth.se/en/eecs/), [TCS](https://www.kth.se/cs/tcs), Royal Institute of Technology (KTH), Stockholm, Sweden
-3. **Mónica Pinto**: [ITIS Software](https://www.uma.es/institutos-uma/info/118460/instituto-de-tecnologias-e-ingenieria-del-software/), [CAOSD](http://caosd.lcc.uma.es/), Dpt. LCC, Universidad de Málaga, Andalucía Tech, Spain
-4. **Lidia Fuentes**: [ITIS Software](https://www.uma.es/institutos-uma/info/118460/instituto-de-tecnologias-e-ingenieria-del-software/), [CAOSD](http://caosd.lcc.uma.es/), Dpt. LCC, Universidad de Málaga, Andalucía Tech, Spain
+3. **Mónica Pinto**: [ITIS Software](https://itis.uma.es/), [CAOSD](http://caosd.lcc.uma.es/), Dpt. LCC, Universidad de Málaga, Andalucía Tech, Spain
+4. **Lidia Fuentes**: [ITIS Software](https://itis.uma.es/), [CAOSD](http://caosd.lcc.uma.es/), Dpt. LCC, Universidad de Málaga, Andalucía Tech, Spain
