@@ -2,7 +2,7 @@
 Advanced Reasoning of Quality Valued Configurations in Category Theory
 
 This repository contains the models, operations and results empirically used in [UNDER REVIEW](https://doi.org/) at Journal of Transactions and Software Engineering.
-Due to copyright issues, it does not contain the tools (i.e., automated reasoners), although their official sites are provided.
+Due to copyright issues, it does not contain the tools (i.e., automated reasoners), although their official repositories or websites information is included.
 
 It is licensed under the [MIT license](https://github.com/danieljmg/QualityVariabilityModel/blob/main/LICENSE).
 
