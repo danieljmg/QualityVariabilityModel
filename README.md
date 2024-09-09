@@ -11,8 +11,8 @@ It is licensed under the [MIT license](https://github.com/danieljmg/QualityVaria
 
 This data-set contains:
 
-1. /Models: The 4 SPLs in 3 different formats; .txt and .js for HADAS/Clafer, .uvl for UVLS/Z3 and .cql for QVM/CQL IDE alongside the code for the 5 quality aware reasoning operations SATISFY, COUNT, FILTER, RANDOM and BOUND.
-2. /QAsCSVs: The corresponding valued variant-wise Quality Attributes for the a) complete solution space in 4 large CSVs; and b) random sampled solution space in another 4 CSVs.
+1. **[/Models](https://github.com/danieljmg/QualityVariabilityModel/tree/main/Models)**: The 4 full (folders **a**) and 4 sampled (folders **b**) feature-wise quality-measured SPLs in 3 different formats; .txt and .js for [HADAS/Clafer](https://github.com/danieljmg/QualityVariabilityModel/tree/main/Models/Clafer), .uvl for [UVLS/Z3](https://github.com/danieljmg/QualityVariabilityModel/tree/main/Models/UVL) and .cql for [QVM/CQL](https://github.com/danieljmg/QualityVariabilityModel/tree/main/Models/QVM) IDE alongside the code for the 5 quality aware reasoning operations [SATISFY](https://github.com/danieljmg/QualityVariabilityModel/tree/main/Models/QVM/SATISFY), [COUNT](https://github.com/danieljmg/QualityVariabilityModel/tree/main/Models/QVM/COUNT), [FILTER](https://github.com/danieljmg/QualityVariabilityModel/tree/main/Models/QVM/FILTER), [RANDOM](https://github.com/danieljmg/QualityVariabilityModel/tree/main/Models/QVM/RANDOM) and [BOUND](https://github.com/danieljmg/QualityVariabilityModel/tree/main/Models/QVM/BOUND).
+2. **[/QAsCSVs](https://github.com/danieljmg/QualityVariabilityModel/tree/main/QAsCSVs)**: The corresponding valued variant-wise Quality Attributes for the a) complete solution space in 4 large CSVs; and b) random sampled solution space in another 4 CSVs.
 3. A Microsoft Excel file with the scalability results, comparisson, and statistic analyses for non-linear regression approximation functions.
 
 
