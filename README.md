@@ -7,7 +7,7 @@ Due to copyright issues, it does not contain the tools (i.e., automated reasoner
 It is licensed under the [MIT license](https://github.com/danieljmg/QualityVariabilityModel/blob/main/LICENSE).
 
 
-## TSE'24 Models, Categorical Operations and Datasets
+## TOSEM'25 Models, Categorical Operations and Datasets
 
 This data-set contains:
 
