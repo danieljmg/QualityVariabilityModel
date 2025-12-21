@@ -1,35 +1,46 @@
-# QualityVariabilityModel
-Advanced Reasoning of Quality Valued Configurations in Category Theory
+# Advanced Reasoning of Quality Valued Configurations in Category Theory
 
-This repository contains the models, operations and results empirically used in [UNDER REVIEW](https://doi.org/) at Journal of Transactions and Software Engineering.
-Due to copyright issues, it does not contain the tools (i.e., automated reasoners), although their official repositories or websites information is included.
+This repository contains the replication package (models, operations, and empirical results) for the paper **"Advanced Reasoning of Quality Valued Configurations in Category Theory"**, currently **UNDER REVIEW** at *ACM Transactions on Software Engineering and Methodology (TOSEM)*.
 
-It is licensed under the [MIT license](https://github.com/danieljmg/QualityVariabilityModel/blob/main/LICENSE).
+This dataset serves as supplementary material to support the reproducibility of the experiments and case studies presented in the manuscript.
 
+## 📂 Repository Structure
 
-## TOSEM'25 Models, Categorical Operations and Datasets
+The repository is organized as follows:
 
-This data-set contains:
+* **/Models**: Contains the 4 full (folders `a`) and 4 sampled (folders `b`) feature-wise quality-measured SPLs. Each model is provided in 3 formats to support different solvers:
+    * `.cql`: For **QVM/CQL IDE** (Our approach). Includes the code for the 6 quality-aware reasoning operations: `SATISFY`, `COUNT`, `FILTER`, `BOUND`, `RANDOM`, and `AGGREGATE`.
+    * `.uvl`: For **UVLS/Z3**.
+    * `.txt` / `.js`: For **HADAS/Clafer**.
+* **/QAsCSVs**: Contains the variant-wise Quality Attributes (QAs) data:
+    * `a)` 4 Large CSVs corresponding to the **complete** solution space.
+    * `b)` 4 CSVs corresponding to the **randomly sampled** solution space.
+* **TSEEvaluationResults&Statistics.xlsx**: A Microsoft Excel file containing the raw scalability results, performance comparison, and statistical analyses for non-linear regression approximation functions.
 
-1. **[/Models](https://github.com/danieljmg/QualityVariabilityModel/tree/main/Models)**: The 4 full (folders **a**) and 4 sampled (folders **b**) feature-wise quality-measured SPLs in 3 different formats; .txt and .js for [HADAS/Clafer](https://github.com/danieljmg/QualityVariabilityModel/tree/main/Models/Clafer), .uvl for [UVLS/Z3](https://github.com/danieljmg/QualityVariabilityModel/tree/main/Models/UVL) and .cql for [QVM/CQL](https://github.com/danieljmg/QualityVariabilityModel/tree/main/Models/QVM) IDE alongside the code for the 5 quality aware reasoning operations [SATISFY](https://github.com/danieljmg/QualityVariabilityModel/tree/main/Models/QVM/SATISFY), [COUNT](https://github.com/danieljmg/QualityVariabilityModel/tree/main/Models/QVM/COUNT), [FILTER](https://github.com/danieljmg/QualityVariabilityModel/tree/main/Models/QVM/FILTER), [RANDOM](https://github.com/danieljmg/QualityVariabilityModel/tree/main/Models/QVM/RANDOM) and [BOUND](https://github.com/danieljmg/QualityVariabilityModel/tree/main/Models/QVM/BOUND).
-2. **[/QAsCSVs](https://github.com/danieljmg/QualityVariabilityModel/tree/main/QAsCSVs)**: The corresponding valued variant-wise Quality Attributes for the a) complete solution space in 4 large CSVs; and b) random sampled solution space in another 4 CSVs.
-3. **[TSEEvaluationResults&Statistics.xlsx](https://github.com/danieljmg/QualityVariabilityModel/blob/main/TSEEvaluationResults%26Statistics.xlsx)**: A Microsoft Excel file with the scalability results, comparisson, and statistic analyses for non-linear regression approximation functions.
+## 🛠️ Automated Reasoners & Tools
 
+This repository focuses on the data and models. The automated reasoners used for the evaluation are third-party tools available at their official repositories:
 
-## Automated Reasoners
+* **CQL IDE** (Required for `.cql` files): [https://github.com/CategoricalData/CQL](https://github.com/CategoricalData/CQL)
+* **UVLS**: [https://marketplace.visualstudio.com/items?itemName=caradhras.uvls-code](https://marketplace.visualstudio.com/items?itemName=caradhras.uvls-code)
+* **HADAS**: [https://hadas.caosd.lcc.uma.es/](https://hadas.caosd.lcc.uma.es/)
 
-- CQL IDE: https://github.com/CategoricalData/CQL
-- UVLS: https://marketplace.visualstudio.com/items?itemName=caradhras.uvls-code
-- HADAS: https://hadas.caosd.lcc.uma.es/
+## 🚀 Usage & Requirements
 
+The dataset generation and experiments were conducted using **Java JDK 17.0.11**.
 
-## Requirements
+To replicate the QVM experiments:
+1.  Download and install the **CQL IDE** from the link above.
+2.  Open the desired `.cql` file from the `/Models` directory.
+3.  Execute the operations defined within the file (SATISFY, FILTER, etc.) to observe the output.
 
-The data-set has been generated using Java JDK 17.0.11.
+## 📄 License
 
-## Authors
+This project is licensed under the **MIT License** - see the LICENSE file for details.
 
-1. **[Daniel-Jesus Munoz](https://github.com/danieljmg)**: [ITIS Software](https://itis.uma.es/), [CAOSD](http://caosd.lcc.uma.es/), Dpt. LCC, Universidad de Málaga, Andalucía Tech, Spain
-2. **Dilian Gurov**: [EECS](https://www.kth.se/en/eecs/), [TCS](https://www.kth.se/cs/tcs), Royal Institute of Technology (KTH), Stockholm, Sweden
-3. **Mónica Pinto**: [ITIS Software](https://itis.uma.es/), [CAOSD](http://caosd.lcc.uma.es/), Dpt. LCC, Universidad de Málaga, Andalucía Tech, Spain
-4. **Lidia Fuentes**: [ITIS Software](https://itis.uma.es/), [CAOSD](http://caosd.lcc.uma.es/), Dpt. LCC, Universidad de Málaga, Andalucía Tech, Spain
+## 👥 Authors
+
+* **Daniel-Jesus Munoz** - *ITIS Software, CAOSD, Dpt. LCC, Universidad de Málaga, Andalucía Tech, Spain*
+* **Mónica Pinto** - *ITIS Software, CAOSD, Dpt. LCC, Universidad de Málaga, Andalucía Tech, Spain*
+* **Dilian Gurov** - *EECS, TCS, Royal Institute of Technology (KTH), Stockholm, Sweden*
+* **Lidia Fuentes** - *ITIS Software, CAOSD, Dpt. LCC, Universidad de Málaga, Andalucía Tech, Spain*
