@@ -1,6 +1,6 @@
 # Advanced Reasoning of Quality Valued Configurations in Category Theory
 
-This repository contains the replication package (models, operations, and empirical results) for the paper **"Advanced Reasoning of Quality Valued Configurations in Category Theory"**, currently **UNDER REVIEW** at *ELSEVIER Information and Software Technology (IST)*.
+This repository contains the replication package (models, operations, and empirical results) for the paper **"Advanced Reasoning of Quality Valued Configurations in Category Theory"**, currently **UNDER REVIEW** at *ELSEVIER Array* journal.
 
 This dataset serves as supplementary material to support the reproducibility of the experiments and case studies presented in the manuscript.
 
