@@ -34,6 +34,19 @@ To replicate the QVM experiments:
 2.  Open the desired `.cql` file from the `/Models` directory.
 3.  Execute the operations defined within the file (SATISFY, FILTER, etc.) to observe the output.
 
+### Synthetic QA values
+The SPL models are taken from the literature, but their QA values are synthetic, because no comparable fully measured SPLs are available. Each QA value was drawn independently and uniformly at random, as an integer within a fixed range per QA, or as a Boolean with equal probability:
+**Variant-wise:**
+- EDGE: `Time` and `Energy` in [1, 1000].
+- Trimesh and MobileMedia: `Cache` in [1, 8000] and a fixed `Cost` of 100.
+- WeaFQAs: `Dependencies` in [1, 10] and a Boolean `Tested`.
+**Feature-wise:**
+- EDGE: `Cost` up to 25 and `Security` in {L, M, H}.
+- Trimesh and MobileMedia: `CodeLines` up to 100,000.
+- WeaFQAs: `Usability` in [1, 10] and a Boolean `Cloud`.
+
+The sampled files in `QAsCSVs/bSampling` were drawn independently of the complete files in `QAsCSVs/aFull`. The generation seeds were not kept, so the published CSV and model files are the reference data, and every tool was run on these same files. For HADAS/Clafer only, feature-wise values were rescaled to [-10, 10] so that their aggregation stays within Clafer's Integer domain.
+
 ## 📄 License
 
 This project is licensed under the **MIT License** - see the LICENSE file for details.
