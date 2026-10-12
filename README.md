@@ -15,7 +15,7 @@ The repository is organized as follows:
 * **/QAsCSVs**: Contains the variant-wise Quality Attributes (QAs) data:
     * `a)` 4 Large CSVs corresponding to the **complete** solution space.
     * `b)` 4 CSVs corresponding to the **randomly sampled** solution space.
-* **TOSEM_EvaluationResults&Statistics.xlsx**: A Microsoft Excel file containing the raw scalability results, performance comparison, and statistical analyses for non-linear regression approximation functions.
+* **ElsevierARRAY_EvaluationResults&Statistics.xlsx**: A Microsoft Excel file containing the raw scalability results, performance comparison, and statistical analyses for non-linear regression approximation functions.
 
 ## 🛠️ Automated Reasoners & Tools
 
